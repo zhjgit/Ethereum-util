@@ -13,7 +13,7 @@
 
   - 生成build/contracts目录，以及所有的合约json文件
   
-* way2: solc  <contract>.sol --bin --abi --optimize -o abis/
+* way2: solc contract.sol --bin --abi --optimize -o abis/
 
   - 将合约生成abi和bin文件，生成的文件在abis目录下
 
