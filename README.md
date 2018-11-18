@@ -25,7 +25,7 @@
 java -jar ethSignUtil.jar
 ```
 
-##### 重要提示！  必须将ethSignUtil.jar 放在上述truffle compile后的build目录的同级目录，或者是solc生成abis目录的同级目录。其中abis目录是强行指定的目录名称
+![重要提示!](https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png)  必须将ethSignUtil.jar 放在上述truffle compile后的build目录的同级目录，或者是solc生成abis目录的同级目录。其中abis目录是强行指定的目录名称
 
 
 # Contact the author
