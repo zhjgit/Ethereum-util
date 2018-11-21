@@ -26,7 +26,6 @@ public class MethodSign {
         anlyContractABI();
     }
 
-
     /**
      * abi 解析
      */
@@ -68,7 +67,7 @@ public class MethodSign {
      */
     public static void truffleGenerate(File f1, Keccak.Digest256 digest256) {
         String fileName = f1.getName();
-        String printContractName = "--------------------------------" + "ContractName: " + fileName.substring(0, fileName.lastIndexOf("json")) + "sol" + "------------------------------------";
+        String printContractName = "--------------------------------" + fileName.substring(0, fileName.lastIndexOf("json")) + "sol" + "------------------------------------";
         System.out.println(printContractName);
         FileOperate.writeMethodSign(System.getProperty("user.dir") + OUTPUT_FILENAME, "\r\n" + printContractName + "\r\n");
         if (f1.canRead()) {
@@ -89,10 +88,9 @@ public class MethodSign {
     public static void solcGenerate(File f1, Keccak.Digest256 digest256) {
         String fileName = f1.getName();
         if (fileName.endsWith(".abi")) {//以.abi结尾的文件
-            String printContractName = "--------------------------------" + "ContractName: " + fileName.substring(0, fileName.lastIndexOf("abi")) + "sol" + "------------------------------------";
+            String printContractName = "--------------------------------" + fileName.substring(0, fileName.lastIndexOf("abi")) + "sol" + "------------------------------------";
             System.out.println(printContractName);
             FileOperate.writeMethodSign(System.getProperty("user.dir") + OUTPUT_FILENAME, "\r\n" + printContractName + "\r\n");
-
             if (f1.canRead()) {
                 JSONArray jsonArray = FileOperate.getDatafromFileForArray(f1.getPath());//abi文件
                 if (jsonArray != null && jsonArray.size() > 0) {
@@ -125,15 +123,16 @@ public class MethodSign {
                     sbf.append(")");
                     String finalFunc = funcName + sbf.toString();
                     functionSign = Hex.toHexString(digest256.digest(finalFunc.getBytes())).substring(0, 8);
-                    writeContent = "--with param--: " + functionSign + " : " + finalFunc;
+                    writeContent = functionSign + " : " + finalFunc;
                     System.out.println(writeContent);
                 } else {
                     functionSign = Hex.toHexString(digest256.digest((funcName + "()").getBytes())).substring(0, 8);
-                    writeContent = "---no param---: " + functionSign + " : " + funcName + "()";
+                    writeContent = functionSign + " : " + funcName + "()";
                     System.out.println(writeContent);
                 }
                 FileOperate.writeMethodSign(System.getProperty("user.dir") + OUTPUT_FILENAME, writeContent + "\r\n");
             }
         }
     }
+
 }

@@ -112,6 +112,29 @@ public class FileOperate {
     }
 
     /**
+     * 逐行读取文件，返回集合
+     *
+     * @param file
+     * @return
+     */
+    public static List<String> readFileIntoStringArrList(File file) {
+        List<String> list = new ArrayList<>();
+        try {
+            InputStreamReader read = new InputStreamReader(new FileInputStream(file), "UTF-8");
+            BufferedReader bufferedReader = new BufferedReader(read);
+            String lineTxt = null;
+            while ((lineTxt = bufferedReader.readLine()) != null) {
+                list.add(lineTxt);
+            }
+            bufferedReader.close();
+            read.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
      * 遍历目录下的所有文件
      *
      * @param fileDir
@@ -140,9 +163,6 @@ public class FileOperate {
                 }
             }
         }
-        /*for (int k = 0; k < fileList.size(); k++) {
-            System.out.println(k + " :" + fileList.get(k).getName());
-        }*/
         return fileList;
     }
 
