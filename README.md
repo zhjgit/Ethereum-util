@@ -1,5 +1,6 @@
 # Ethereum-util
-这是一个帮助以太坊合约开发者，快速获取合约方法签名的小工具。当我们将合约开发完成后，需要js或者java调用时，需要合约的方法签名。当然现在使用web3能生成方法签名，但是我们在拼接方法签名参数的过程中仍然有不可避免的错误。使用ethSignUtil工具能一次性生成所有合约的方法签名，帮助开发者校对合约方法签名是否正确，而不需要使用remix将一个个方法在里面编写生成方法签名校对
+这是一个帮助以太坊合约开发者，快速获取合约方法签名的小工具。当我们将合约开发完成后，需要js或者java调用时，需要合约的方法签名。当然现在使用web3能生成方法签名，但是我们在拼接方法签名参数的过程中仍然有不可避免的错误。使用ethSignUtil工具能一次性生成所有合约的方法签名，帮助开发者校对合约方法签名是否正确，而不需要使用remix将一个个方法在里面编写生成方法签名校对。
+ethSignUtil2.0 添加了合约方法文档生成功能，帮助合约开发者与相关协作开发者接口统一。
 
 
 # source abi File
@@ -18,7 +19,7 @@
   - 将合约生成abi和bin文件，生成的文件在abis目录下
 
 # Usage
-* download: [ethSignUtil.jar](https://github.com/zhjgit/Ethereum-util/releases/download/ethSignUtil1.0/ethSignUtil.jar)
+* download: [ethSignUtil.jar](https://github.com/zhjgit/Ethereum-util/releases/download/ethSignUtil2.0/ethSignUtil.jar)
 
 
 ```java
