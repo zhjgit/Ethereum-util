@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ContractDoc {
     /**
-     * 生成的方法签名文件
+     * 生成合约文档文件
      */
     public static final String CONTRACT_FILENAME = "/contract_DOC.html";
 
