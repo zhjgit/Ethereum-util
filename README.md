@@ -16,7 +16,7 @@ ethSignUtil2.0 添加了合约方法文档生成功能，帮助合约开发者�
   
 * way2: solc contract.sol --bin --abi --optimize -o abis/
 
-  - 将合约生成abi和bin文件，生成的文件在abis目录下
+  - 将合约生成abi和bin文件放在abis目录下
 
 # Usage
 * download: [ethSignUtil.jar](https://github.com/zhjgit/Ethereum-util/releases/download/ethSignUtil2.0/ethSignUtil.jar)
